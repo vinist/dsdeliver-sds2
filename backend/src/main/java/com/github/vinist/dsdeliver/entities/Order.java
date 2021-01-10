@@ -24,7 +24,7 @@ public class Order implements Serializable {
     private Instant moment;
     private OrderStatus status;
     
-    @Getter(AccessLevel.PRIVATE)
+    @Setter(AccessLevel.NONE)
     @ManyToMany
     @JoinTable(name = "tb_order_product",
             joinColumns = @JoinColumn(name = "order_id"),

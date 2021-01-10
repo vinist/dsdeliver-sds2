@@ -1,11 +1,13 @@
 package com.github.vinist.dsdeliver.dto;
 
 import com.github.vinist.dsdeliver.entities.Product;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class ProductDto implements Serializable {
