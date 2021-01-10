@@ -33,4 +33,10 @@ public class OrderController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
+    
+    @PutMapping("/{id}/delivered")
+    public ResponseEntity<OrderDto> setDelivered(@PathVariable Long id){
+        var order = orderService.setDelivered(id);
+        return ResponseEntity.ok().body(order);
+    }
 }

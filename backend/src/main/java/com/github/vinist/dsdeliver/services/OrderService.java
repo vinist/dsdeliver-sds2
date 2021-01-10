@@ -3,6 +3,7 @@ package com.github.vinist.dsdeliver.services;
 import com.github.vinist.dsdeliver.dto.OrderDto;
 import com.github.vinist.dsdeliver.dto.ProductDto;
 import com.github.vinist.dsdeliver.entities.Order;
+import com.github.vinist.dsdeliver.entities.OrderStatus;
 import com.github.vinist.dsdeliver.repositories.OrderRepository;
 import com.github.vinist.dsdeliver.repositories.ProductRepository;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,14 @@ public class OrderService {
         for(ProductDto p: dto.getProducts()) {
             order.getProducts().add(productRepository.getOne(p.getId()));
         }
+        order = orderRepository.save(order);
+        return new OrderDto(order);
+    }
+    
+    @Transactional
+    public OrderDto setDelivered(Long id) {
+        Order order = orderRepository.getOne(id);
+        order.setStatus(OrderStatus.DELIVERED);
         order = orderRepository.save(order);
         return new OrderDto(order);
         
