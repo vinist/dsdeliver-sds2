@@ -1,5 +1,6 @@
 package com.github.vinist.dsdeliver.entities;
 
+import com.github.vinist.dsdeliver.dto.ProductDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +22,4 @@ public class Product implements Serializable {
     private Double price;
     private String description;
     private String imageUri;
-    
 }

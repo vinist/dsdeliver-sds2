@@ -5,10 +5,10 @@ import com.github.vinist.dsdeliver.dto.ProductDto;
 import com.github.vinist.dsdeliver.services.OrderService;
 import com.github.vinist.dsdeliver.services.ProductService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -25,5 +25,12 @@ public class OrderController {
     public ResponseEntity<List<OrderDto>> findAll() {
         var orders = orderService.findAll();
         return ResponseEntity.ok().body(orders);
+    }
+    
+    @PostMapping
+    public ResponseEntity<OrderDto> insert(@RequestBody OrderDto dto) {
+        dto =orderService.insert(dto);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
+        return ResponseEntity.created(uri).body(dto);
     }
 }

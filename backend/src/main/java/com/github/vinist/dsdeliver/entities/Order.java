@@ -1,5 +1,6 @@
 package com.github.vinist.dsdeliver.entities;
 
+import com.github.vinist.dsdeliver.dto.OrderDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,4 +32,12 @@ public class Order implements Serializable {
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     private Set<Product> products = new HashSet<>();
+    
+    public Order(OrderDto dto) {
+        this.address = dto.getAddress();
+        this.latitude = dto.getLatitude();
+        this.longitude = dto.getLongitude();
+        this.moment = Instant.now();
+        this.status = OrderStatus.PENDING;
+    }
 }
