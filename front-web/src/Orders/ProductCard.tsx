@@ -29,7 +29,7 @@ function ProductsCard({ product }: Props) {
                 { formatPrice(product.price) }
             </h3>
             <h3 className="order-card-description">
-                <h3>Descrição</h3>
+                Descrição
                 <p>
                 { product.description }
                 </p>
