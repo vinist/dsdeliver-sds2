@@ -8,7 +8,6 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -39,5 +38,9 @@ public class Order implements Serializable {
         this.longitude = dto.getLongitude();
         this.moment = Instant.now();
         this.status = OrderStatus.PENDING;
+    }
+    
+    public Double getTotal() {
+        return products.stream().map(Product::getPrice).reduce(0.0, Double::sum);
     }
 }

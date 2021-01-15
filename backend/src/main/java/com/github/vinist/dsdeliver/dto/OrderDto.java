@@ -2,7 +2,6 @@ package com.github.vinist.dsdeliver.dto;
 
 import com.github.vinist.dsdeliver.entities.Order;
 import com.github.vinist.dsdeliver.entities.OrderStatus;
-import com.github.vinist.dsdeliver.entities.Product;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +23,7 @@ public class OrderDto implements Serializable {
     private Double longitude;
     private Instant moment;
     private OrderStatus status;
+    private Double total;
     
     @Setter(AccessLevel.NONE)
     private List<ProductDto> products = new ArrayList<>();
@@ -36,5 +36,6 @@ public class OrderDto implements Serializable {
         this.moment = entity.getMoment();
         this.status = entity.getStatus();
         this.products = entity.getProducts().stream().map(ProductDto::new).collect(Collectors.toList());
+        this.total = entity.getTotal();
     }
 }
