@@ -1,4 +1,4 @@
-Tecnologias utilizadas:
+## Tecnologias utilizadas:
 - React
 - Type Script
 - React Leaflet
