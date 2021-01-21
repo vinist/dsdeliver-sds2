@@ -1,7 +1,7 @@
 ### Projeto Semana DevSuperior 2.0
 ---
 
-O projeto consiste em um sistema web de pedidos com um aplicativo
+O projeto consiste em um sistema web de pedidos com um aplicativo mobile
 que lista os pedidos feito na web para o entregador aceitar e realizar a entrega conforme a rota do google maps.
 
 Para o back-end foi utilizado:
@@ -31,9 +31,18 @@ Para o front-end foi utilizado:
 
 > Link do Netlify para o front-ent: https://dsdelivery-vinicius.netlify.app/
 
-Para o aplicativo foi utilizado:
+Para o aplicativo mobile foi utilizado:
 - React Native
 - Type Script
 - Axios
 - Google Maps
 - Visual Studio Code
+
+Front-End - Home 
+![alt text](https://github.com/vinist/dsdeliver-sds2/blob/main/front-web/home.png?raw=true "Home")
+
+Front-End - Pedidos 
+![alt text](https://github.com/vinist/dsdeliver-sds2/blob/main/front-web/pedido.png?raw=true "Pedidos")
+
+Aplicativo Mobile
+![alt text](https://github.com/vinist/dsdeliver-sds2/blob/main/front-web/mobile.png?raw=true "Telas do Aplicativo")
