@@ -33,6 +33,7 @@ Para o front-end foi utilizado:
 
 Para o aplicativo mobile foi utilizado:
 - React Native
+- Expo
 - Type Script
 - Axios
 - Google Maps
